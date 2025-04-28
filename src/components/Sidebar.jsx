@@ -4,11 +4,8 @@ import './Sidebar.css';
 const sections = [
   { key: 'projects', label: 'Project Manager', icon: '🗂️' },
   { key: 'todo', label: 'To-Do List', icon: '✅' },
-  { key: 'calendar', label: 'Calendar View', icon: '📅' },
   { key: 'skills', label: 'Skill Tracker', icon: '🛠️' },
   { key: 'notes', label: 'Notes/Docs', icon: '📋' },
-  { key: 'github', label: 'GitHub Links', icon: '🔗' },
-  { key: 'productivity', label: 'Productivity Tracker', icon: '⏳' },
 ];
 
 const Sidebar = ({ onSectionSelect, selectedSection }) => {
