@@ -1,0 +1,203 @@
+.project-manager {
+  padding: 40px 20px;
+  max-width: 1000px;
+  margin: 0 auto;
+  color: #f3f3f3;
+  background: transparent;
+}
+
+.project-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+.project-header h2 {
+  font-size: 2.2rem;
+  font-weight: 700;
+  margin-bottom: 10px;
+  letter-spacing: 1px;
+}
+
+.project-header button {
+  padding: 10px 22px;
+  background: linear-gradient(90deg, #4f8cff, #38e7b7);
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.2s;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+}
+
+.project-header button:hover {
+  background: linear-gradient(90deg, #38e7b7, #4f8cff);
+  transform: translateY(-2px) scale(1.04);
+}
+
+/* Modal Styles */
+.add-project-modal {
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0,0,0,0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+.add-project-form {
+  background: #23272f;
+  padding: 32px 28px;
+  border-radius: 12px;
+  box-shadow: 0 4px 32px rgba(0,0,0,0.25);
+  min-width: 340px;
+  max-width: 95vw;
+  color: #f3f3f3;
+}
+.add-project-form h3 {
+  margin-bottom: 18px;
+  font-size: 1.3rem;
+  font-weight: 600;
+}
+.form-group {
+  margin-bottom: 16px;
+}
+.form-group label {
+  display: block;
+  margin-bottom: 6px;
+  font-weight: 500;
+}
+.form-group input,
+.form-group textarea,
+.form-group select {
+  width: 100%;
+  padding: 9px 10px;
+  border: 1px solid #444b5a;
+  border-radius: 5px;
+  background: #181b20;
+  color: #f3f3f3;
+  font-size: 1rem;
+  margin-top: 2px;
+}
+.form-group textarea {
+  height: 80px;
+  resize: vertical;
+}
+.form-actions {
+  display: flex;
+  gap: 12px;
+  margin-top: 18px;
+  justify-content: flex-end;
+}
+.form-actions button {
+  padding: 8px 18px;
+  border: none;
+  border-radius: 5px;
+  font-weight: 600;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background 0.2s, color 0.2s;
+}
+.form-actions button:first-child {
+  background: #4f8cff;
+  color: #fff;
+}
+.form-actions button:last-child {
+  background: #23272f;
+  color: #f3f3f3;
+  border: 1px solid #444b5a;
+}
+.form-actions button:last-child:hover {
+  background: #181b20;
+}
+
+.projects-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 28px;
+  margin-top: 30px;
+}
+
+.project-card {
+  background: #23272f;
+  border: 1px solid #353b48;
+  border-radius: 12px;
+  padding: 22px 18px 18px 18px;
+  box-shadow: 0 2px 16px rgba(0,0,0,0.18);
+  transition: box-shadow 0.2s, transform 0.2s;
+  position: relative;
+}
+.project-card:hover {
+  box-shadow: 0 6px 32px rgba(0,0,0,0.28);
+  transform: translateY(-3px) scale(1.01);
+}
+.project-card .project-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+}
+.project-card .project-header h3 {
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+.project-card .project-header button {
+  background: #f44336;
+  color: #fff;
+  border: none;
+  padding: 5px 12px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.95rem;
+  transition: background 0.2s;
+}
+.project-card .project-header button:hover {
+  background: #c62828;
+}
+.project-details {
+  margin-top: 10px;
+}
+.project-details p {
+  margin: 4px 0;
+  font-size: 0.98rem;
+}
+.progress-section {
+  margin: 14px 0 8px 0;
+}
+.progress-section label {
+  font-size: 0.97rem;
+}
+.progress-section input[type="range"] {
+  width: 100%;
+  margin-top: 5px;
+  accent-color: #4f8cff;
+}
+.project-links {
+  margin-top: 10px;
+  display: flex;
+  gap: 12px;
+}
+.project-links a {
+  color: #38e7b7;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.2s;
+}
+.project-links a:hover {
+  color: #4f8cff;
+  text-decoration: underline;
+}
+
+/* Empty state */
+.empty-state {
+  text-align: center;
+  margin-top: 60px;
+  color: #b0b8c1;
+  font-size: 1.2rem;
+  opacity: 0.8;
+  letter-spacing: 0.5px;
+  user-select: none;
+} 

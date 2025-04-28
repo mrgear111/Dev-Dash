@@ -1,7 +1,17 @@
 import React from 'react';
 import './Sidebar.css';
 
-const Sidebar = () => {
+const sections = [
+  { key: 'projects', label: 'Project Manager', icon: '🗂️' },
+  { key: 'todo', label: 'To-Do List', icon: '✅' },
+  { key: 'calendar', label: 'Calendar View', icon: '📅' },
+  { key: 'skills', label: 'Skill Tracker', icon: '🛠️' },
+  { key: 'notes', label: 'Notes/Docs', icon: '📋' },
+  { key: 'github', label: 'GitHub Links', icon: '🔗' },
+  { key: 'productivity', label: 'Productivity Tracker', icon: '⏳' },
+];
+
+const Sidebar = ({ onSectionSelect, selectedSection }) => {
   return (
     <div className="sidebar">
       <div className="sidebar-header">
@@ -9,41 +19,16 @@ const Sidebar = () => {
       </div>
       <nav className="sidebar-nav">
         <ul>
-          <li>
-            <a href="#projects">
-              <span role="img" aria-label="projects">🗂️</span> Project Manager
-            </a>
-          </li>
-          <li>
-            <a href="#todo">
-              <span role="img" aria-label="todo">✅</span> To-Do List
-            </a>
-          </li>
-          <li>
-            <a href="#calendar">
-              <span role="img" aria-label="calendar">📅</span> Calendar View
-            </a>
-          </li>
-          <li>
-            <a href="#skills">
-              <span role="img" aria-label="skills">🛠️</span> Skill Tracker
-            </a>
-          </li>
-          <li>
-            <a href="#notes">
-              <span role="img" aria-label="notes">📋</span> Notes/Docs
-            </a>
-          </li>
-          <li>
-            <a href="#github">
-              <span role="img" aria-label="github">🔗</span> GitHub Links
-            </a>
-          </li>
-          <li>
-            <a href="#productivity">
-              <span role="img" aria-label="productivity">⏳</span> Productivity Tracker
-            </a>
-          </li>
+          {sections.map((section) => (
+            <li key={section.key}>
+              <button
+                className={`sidebar-link${selectedSection === section.key ? ' active' : ''}`}
+                onClick={() => onSectionSelect(section.key)}
+              >
+                <span role="img" aria-label={section.key}>{section.icon}</span> {section.label}
+              </button>
+            </li>
+          ))}
         </ul>
       </nav>
     </div>

@@ -28,7 +28,29 @@
 }
 
 .sidebar-nav li {
-  margin-bottom: 10px;
+  margin-bottom: 16px;
+}
+
+.sidebar-link {
+  background: none;
+  border: none;
+  color: inherit;
+  text-align: left;
+  width: 100%;
+  font-size: 1rem;
+  padding: 10px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  transition: background 0.2s, color 0.2s;
+}
+
+.sidebar-link:hover,
+.sidebar-link.active {
+  background: linear-gradient(90deg, #43e97b 0%, #38f9d7 100%);
+  color: #222;
 }
 
 .sidebar-nav a {

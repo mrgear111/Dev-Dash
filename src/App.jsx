@@ -1,28 +1,28 @@
 import { useState } from 'react'
 import Sidebar from './components/Sidebar'
 import './App.css'
+import ProjectManager from './components/ProjectManager'
+import TodoList from './components/TodoList'
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [selectedSection, setSelectedSection] = useState('projects');
+
+  let MainSection;
+  if (selectedSection === 'projects') {
+    MainSection = <ProjectManager />;
+  } else if (selectedSection === 'todo') {
+    MainSection = <TodoList />;
+  } else {
+    MainSection = <div style={{ color: '#fff', margin: 'auto' }}>Section coming soon!</div>;
+  }
 
   return (
     <div className="app-container">
-      <Sidebar />
-      <main className="main-content">
-        <div>
-          <h1>Welcome to DevDash</h1>
-          <div className="card">
-            <button onClick={() => setCount((count) => count + 1)}>
-              count is {count}
-            </button>
-            <p>
-              Edit <code>src/App.jsx</code> and save to test HMR
-            </p>
-          </div>
-        </div>
-      </main>
+      <Sidebar onSectionSelect={setSelectedSection} selectedSection={selectedSection} />
+      {MainSection}
     </div>
   )
 }
 
 export default App
+
