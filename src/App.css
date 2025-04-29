@@ -9,8 +9,17 @@
   box-sizing: border-box;
 }
 
+html, body, #root {
+  width: 100%;
+  height: 100%;
+  overflow-x: hidden;
+  background: #1a1b1e;
+}
+
 #root {
   min-height: 100vh;
+  width: 100vw;
+  max-width: 100%;
 }
 
 .logo {
@@ -43,23 +52,30 @@
 
 .app-container {
   min-height: 100vh;
-  background: #f8f9fa;
+  width: 100vw;
+  max-width: 100%;
+  background: #1a1b1e;
+  overflow-x: hidden;
 }
 
 .app-content {
   display: flex;
   padding-top: var(--navbar-height);
   min-height: 100vh;
+  width: 100%;
 }
 
 .main-content {
   flex: 1;
   margin-left: var(--sidebar-width);
-  padding: 2rem;
-  background: #f8f9fa;
+  padding: 0;
+  background: #1a1b1e;
   min-height: calc(100vh - var(--navbar-height));
   overflow-y: auto;
+  overflow-x: hidden;
   transition: margin-left 0.3s ease;
+  width: calc(100vw - var(--sidebar-width));
+  max-width: calc(100vw - var(--sidebar-width));
 }
 
 /* Sidebar adjustments */
@@ -73,11 +89,12 @@
   border-right: 1px solid rgba(255, 255, 255, 0.1);
   overflow-y: auto;
   transition: transform 0.3s ease;
+  z-index: 10;
 }
 
 /* Card styles */
 .card {
-  background: #ffffff;
+  background: #23272f;
   border-radius: 12px;
   box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
   padding: 1.5rem;
@@ -109,25 +126,7 @@ button:focus-visible {
   outline-offset: 2px;
 }
 
-/* Dark mode adjustments */
-@media (prefers-color-scheme: dark) {
-  .app-container {
-    background: #1a1b1e;
-    color: #ffffff;
-  }
-  
-  .main-content {
-    background: #1a1b1e;
-    width: 100%;
-  }
-  
-  .card {
-    background: #23272f;
-    border: 1px solid rgba(255, 255, 255, 0.1);
-  }
-}
-
-
+/* Media queries */
 @media (max-width: 768px) {
   .app-content {
     flex-direction: column;
@@ -135,7 +134,8 @@ button:focus-visible {
   
   .main-content {
     margin-left: 0;
-    padding: 1rem;
+    width: 100vw;
+    max-width: 100%;
   }
   
   .sidebar {

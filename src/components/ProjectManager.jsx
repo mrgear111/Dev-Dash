@@ -48,40 +48,43 @@ const ProjectManager = () => {
           <form className="add-project-form">
             <h3>Add New Project</h3>
             <div className="form-grid">
-              {['title', 'description'].map(field => (
-                <div key={field} className="form-group full-width">
-                  <label>{field.charAt(0).toUpperCase() + field.slice(1)}</label>
-                  <input
-                    type="text"
-                    value={newProject[field]}
-                    onChange={e => updateNewProject(field, e.target.value)}
-                    placeholder={`Enter project ${field}`}
-                  />
-                </div>
-              ))}
+              <div className="form-group full-width">
+                <label>Title</label>
+                <input
+                  type="text"
+                  value={newProject.title}
+                  onChange={e => updateNewProject('title', e.target.value)}
+                  placeholder="Enter project title"
+                />
+              </div>
+              
+              <div className="form-group full-width">
+                <label>Description</label>
+                <textarea
+                  value={newProject.description}
+                  onChange={e => updateNewProject('description', e.target.value)}
+                  placeholder="Enter project description"
+                  rows={4}
+                ></textarea>
+              </div>
 
-              {['startDate', 'deadline'].map(field => (
-                <div key={field} className="form-group">
-                  <label>{field.replace(/([A-Z])/g, ' $1').charAt(0).toUpperCase() + field.replace(/([A-Z])/g, ' $1').slice(1)}</label>
-                  <input
-                    type="date"
-                    value={newProject[field]}
-                    onChange={e => updateNewProject(field, e.target.value)}
-                  />
-                </div>
-              ))}
+              <div className="form-group">
+                <label>Start Date</label>
+                <input
+                  type="date"
+                  value={newProject.startDate}
+                  onChange={e => updateNewProject('startDate', e.target.value)}
+                />
+              </div>
 
-              {['githubLink', 'liveLink'].map(field => (
-                <div key={field} className="form-group">
-                  <label>{field.replace(/([A-Z])/g, ' $1').charAt(0).toUpperCase() + field.replace(/([A-Z])/g, ' $1').slice(1)}</label>
-                  <input
-                    type="url"
-                    value={newProject[field]}
-                    onChange={e => updateNewProject(field, e.target.value)}
-                    placeholder={`Enter ${field.replace(/([A-Z])/g, ' $1').toLowerCase()}`}
-                  />
-                </div>
-              ))}
+              <div className="form-group">
+                <label>Deadline</label>
+                <input
+                  type="date"
+                  value={newProject.deadline}
+                  onChange={e => updateNewProject('deadline', e.target.value)}
+                />
+              </div>
 
               <div className="form-group">
                 <label>Status</label>
@@ -104,6 +107,26 @@ const ProjectManager = () => {
                   placeholder="Enter technologies (comma separated)"
                 />
               </div>
+
+              <div className="form-group">
+                <label>GitHub Link</label>
+                <input
+                  type="url"
+                  value={newProject.githubLink}
+                  onChange={e => updateNewProject('githubLink', e.target.value)}
+                  placeholder="Enter GitHub repository URL"
+                />
+              </div>
+
+              <div className="form-group">
+                <label>Live Link</label>
+                <input
+                  type="url"
+                  value={newProject.liveLink}
+                  onChange={e => updateNewProject('liveLink', e.target.value)}
+                  placeholder="Enter live site URL"
+                />
+              </div>
             </div>
 
             <div className="form-actions">
@@ -119,7 +142,7 @@ const ProjectManager = () => {
           </div>
         )}
 
-        {!showForm && projects.length > 0 && (
+        {projects.length > 0 && (
           <div className="projects-list">
             {projects.map(project => (
               <div key={project.id} className="project-card">
