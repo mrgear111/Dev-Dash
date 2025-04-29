@@ -1,8 +1,16 @@
+:root {
+  --navbar-height: 70px;
+  --sidebar-width: 250px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 #root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+  min-height: 100vh;
 }
 
 .logo {
@@ -33,53 +41,113 @@
   }
 }
 
-.card {
-  padding: 2em;
-  border-radius: 8px;
-  background-color: #f8f9fa;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-
-.read-the-docs {
-  color: #888;
-}
-
 .app-container {
+  min-height: 100vh;
+  background: #f8f9fa;
+}
+
+.app-content {
   display: flex;
+  padding-top: var(--navbar-height);
   min-height: 100vh;
 }
 
 .main-content {
   flex: 1;
-  margin-left: 250px;
+  margin-left: var(--sidebar-width);
   padding: 2rem;
+  background: #f8f9fa;
+  min-height: calc(100vh - var(--navbar-height));
+  overflow-y: auto;
+  transition: margin-left 0.3s ease;
 }
 
+/* Sidebar adjustments */
+.sidebar {
+  position: fixed;
+  top: var(--navbar-height);
+  left: 0;
+  width: var(--sidebar-width);
+  height: calc(100vh - var(--navbar-height));
+  background: #1a1b1e;
+  border-right: 1px solid rgba(255, 255, 255, 0.1);
+  overflow-y: auto;
+  transition: transform 0.3s ease;
+}
+
+/* Card styles */
+.card {
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+  padding: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+/* Button styles */
 button {
   border-radius: 8px;
-  border: 1px solid transparent;
+  border: none;
   padding: 0.6em 1.2em;
   font-size: 1em;
   font-weight: 500;
   font-family: inherit;
-  background-color: #1a1a1a;
-  cursor: pointer;
-  transition: border-color 0.25s;
+  background: linear-gradient(45deg, #3498db, #2ecc71);
   color: white;
+  cursor: pointer;
+  transition: all 0.3s ease;
 }
 
 button:hover {
-  border-color: #646cff;
+  opacity: 0.9;
+  transform: translateY(-1px);
 }
 
 button:focus,
 button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
+  outline: 2px solid #3498db;
+  outline-offset: 2px;
 }
 
-@media (prefers-color-scheme: light) {
-  button {
-    background-color: #f9f9f9;
-    color: #213547;
+/* Dark mode adjustments */
+@media (prefers-color-scheme: dark) {
+  .app-container {
+    background: #1a1b1e;
+    color: #ffffff;
   }
+  
+  .main-content {
+    background: #1a1b1e;
+    width: 100%;
+  }
+  
+  .card {
+    background: #23272f;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+  }
+}
+
+
+@media (max-width: 768px) {
+  .app-content {
+    flex-direction: column;
+  }
+  
+  .main-content {
+    margin-left: 0;
+    padding: 1rem;
+  }
+  
+  .sidebar {
+    transform: translateX(-100%);
+    z-index: 100;
+  }
+  
+  .sidebar.active {
+    transform: translateX(0);
+  }
+}
+
+.read-the-docs {
+  color: #888;
 }

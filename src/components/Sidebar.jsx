@@ -11,9 +11,9 @@ const sections = [
 const Sidebar = ({ onSectionSelect, selectedSection }) => {
   return (
     <div className="sidebar">
-      <div className="sidebar-header">
-        <h2>DevDash</h2>
-      </div>
+      {/*logo removed for now*/}
+      {/* <div className="sidebar-header">
+      </div> */}
       <nav className="sidebar-nav">
         <ul>
           {sections.map((section) => (
