@@ -1,12 +1,58 @@
-# React + Vite
+# DevDash
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+DevDash is a modern developer dashboard application built with React and Vite, designed to help developers organize and manage their projects, tasks, skills, and notes in one convenient interface.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+### Navigation
+- **Modern Navbar**: A sleek glassmorphism-style navigation bar with user profile integration
+- **Sidebar**: Quick access to all main application features
+- **Responsive Design**: Fully functional on both desktop and mobile devices
 
-## Expanding the ESLint configuration
+### Project Manager
+- **Inline Project Creation**: Add new projects directly within the interface
+- **Full-width Layout**: Maximizes screen real estate for better project visibility
+- **Project Details**: Track name, description, status, priority, deadlines, and more
+- **Responsive Grid**: Adapts to screen size for optimal viewing experience
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+### Todo List
+- **Task Organization**: Create, manage, and track your daily tasks
+- **Priority Levels**: Assign importance to your tasks
+- **Status Tracking**: Monitor task completion
+
+### Skill Tracker
+- **Skill Management**: Log and monitor skills you're learning or want to develop
+- **Progress Tracking**: Record skill levels and improvement over time
+- **Resource Management**: Link learning resources to each skill
+- **Practice Scheduling**: Track when you last practiced each skill
+
+### Notes
+- **Rich Text Notes**: Keep track of important information and ideas
+- **Modern UI**: Beautiful gradient text effects and interactive elements
+- **Organized Storage**: Maintain a collection of notes in one place
+
+## Technologies Used
+- React
+- Vite
+- Modern CSS with responsive design
+- Local storage for data persistence
+
+## Getting Started
+
+1. Clone the repository
+2. Install dependencies:
+   ```
+   npm install
+   ```
+3. Run the development server:
+   ```
+   npm run dev
+   ```
+4. Open your browser to the URL displayed in the terminal (typically http://localhost:5173/)
+
+## Future Enhancements
+- Enhanced project management capabilities
+- Data export/import functionality
+- Cloud synchronization
+- Dark/light theme toggle
+- User authentication
