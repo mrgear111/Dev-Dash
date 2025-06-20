@@ -4,6 +4,9 @@ DevDash is a modern developer dashboard application built with React and Vite, d
 
 ## Features
  
+
+
+ 
 ### Navigation
 - **Modern Navbar**: A sleek glassmorphism-style navigation bar with user profile integration
 - **Sidebar**: Quick access to all main application features
